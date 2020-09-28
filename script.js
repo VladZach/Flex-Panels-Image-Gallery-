@@ -15,4 +15,3 @@ panels.forEach(element => {
   element.addEventListener('transitionend', toggleActive)
 })
 
-
