@@ -1,10 +1,19 @@
 const panels = document.querySelectorAll('.panel')
-panels.forEach(element => {
-  element.addEventListener('click', togglePanel)
-})
 
 function togglePanel() {
   console.log(this)
   this.classList.toggle('open')
-  this.classList.toggle('open-active')
 }
+
+function toggleActive(e) {
+  if(e.propertyName.includes('flex')){
+    this.classList.toggle('open-active')
+  }
+}
+
+panels.forEach(element => {
+  element.addEventListener('click', togglePanel)
+  element.addEventListener('transitionend', toggleActive)
+})
+
+
